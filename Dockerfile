@@ -1,8 +1,9 @@
 FROM httpd:2.4
 
-COPY index.html /var/www/html/
-
 USER root
+
+COPY index.html /var/www/html/
+RUN chown -R apache:apache /var/www/html
 
 EXPOSE 8080
 EXPOSE 8443
